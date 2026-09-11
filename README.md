@@ -1,104 +1,93 @@
-# 📄 LangChain Multi-Tool Project
+# RepoScribe-with-RAG
 
-A powerful workspace combining multiple AI-driven functionalities into a single repository. This project features a fully functional **Streamlit-based Auto-README Generator** powered by Google Gemini, alongside local scripts for building **Retrieval-Augmented Generation (RAG)** pipelines over GitHub repositories and local documents.
+## This README is also created by using RepoScribe...
+A toolset combining a Streamlit web application for automated README generation with a local Retrieval-Augmented Generation (RAG) pipeline for querying repository codebases.
 
----
+## Overview
 
-## ✨ Features
+RepoScribe-with-RAG provides workspace tools for automating software documentation and performing vector search Q&A over codebases. The Streamlit web application extracts repository content using `GitLoader`, filters out binary and dependency files, builds a visual repository tree, and passes context to Google Gemini to generate structured README documentation. The local scripts enable cloning repository files into `output.md`, chunking document text, indexing embeddings in ChromaDB, and answering natural language queries using ChatGroq.
 
-- **Auto-README Generator (Streamlit App)**
-  - Enter any public GitHub repository URL to auto-generate a professional `README.md`.
-  - Intelligently filters out binary files and dependency folders to fit code into context windows.
-  - Generates READMEs completely locally in your browser using **Google Gemini** models.
-  - Provides instant previews and 1-click Markdown downloads.
+## Key Features
 
-- **Local RAG Pipeline (Core Scripts)**
-  - Clones and processes GitHub repositories directly using LangChain's `GitLoader`.
-  - Chunks, embeds, and indexes document context using `sentence-transformers` and **ChromaDB**.
-  - Queries local repositories via LangChain with an LLM of your choice.
+- **Auto-README Generator (`streamlit_app.py`)**: Uses `GitLoader` to retrieve repository files, filters unwanted directories and file types (`SKIP_DIRS`, `SKIP_EXTENSIONS`), builds a formatted file tree, and generates Markdown documentation via `ChatGoogleGenerativeAI`.
+- **Repository Context Dumper (`loader.py`)**: Clones remote Git repositories using `GitLoader` and aggregates source code content along with source file metadata into a single `output.md` file.
+- **Local RAG Pipeline (`main.py`)**: Processes `output.md` using `RecursiveCharacterTextSplitter` (chunk size 500, overlap 100), generates vector embeddings with `HuggingFaceEmbeddings`, indexes them into a `Chroma` vector store, and executes retrieval-backed prompts using `ChatGroq` (`llama-3.3-70b-versatile`).
 
----
+## Tech Stack
 
-## 🧩 Tech Stack
+- **Web Framework**: Streamlit
+- **AI/LLM Framework**: LangChain (`langchain`, `langchain-community`, `langchain-core`, `langchain-google-genai`, `langchain-huggingface`, `langchain-chroma`, `langchain-text-splitters`, `langchainhub`)
+- **LLM Providers**: Google Generative AI (`ChatGoogleGenerativeAI`), Groq (`ChatGroq`)
+- **Embeddings & Vector Store**: HuggingFace Embeddings (`sentence-transformers`), ChromaDB (`chromadb`)
+- **Repository Management**: GitPython (`GitLoader`)
+- **Environment Management**: `python-dotenv`
 
-- **Frameworks:** [Streamlit](https://streamlit.io/), [LangChain](https://python.langchain.com/)
-- **LLM Providers:** [Google GenAI (Gemini)](https://ai.google.dev/)
-- **Vector Store:** ChromaDB
-- **Embeddings:** HuggingFace (`sentence-transformers`)
-
----
-
-## 📁 Project Structure
+## Project Structure
 
 ```text
-langchain-project/
-├── streamlit_app.py     # Main Streamlit web app for auto-generating READMEs
-├── main.py              # Local RAG Q&A script using ChromaDB + LangChain
-├── loader.py            # Utility script for cloning and dumping GitHub repos to output.md
-├── requirements.txt     # Project Python dependencies
-└── .env                 # Environment variables (GOOGLE_API_KEY, GROQ_API_KEY)
+.
+├── .gitignore          # File specifying unversioned files to ignore
+├── README.md           # Repository documentation
+├── loader.py           # Script to clone a Git repo and write document content to output.md
+├── main.py             # Script to build Chroma vectorstore and run RAG Q&A using ChatGroq
+├── requirements.txt    # List of Python dependencies
+└── streamlit_app.py    # Streamlit application for automated README generation
 ```
 
----
+## Installation
 
-## 📋 Prerequisites
-
-Ensure you have Python installed, and create a virtual environment:
+Create and activate a virtual environment, then install the dependencies listed in `requirements.txt`:
 
 ```bash
 python -m venv .venv
 
 # Windows
 .venv\Scripts\activate
+
 # macOS/Linux
 source .venv/bin/activate
-```
 
-Install the required dependencies:
-
-```bash
 pip install -r requirements.txt
 ```
 
-> **Note on Python 3.14+:** Some ML libraries (like `sentence-transformers`) may require `torchvision` or face thread shutdown bugs. If you encounter a `ModuleNotFoundError` during Streamlit runs, run `pip install torchvision`.
+## Usage
 
----
+### Run the Auto-README Generator App
 
-## ⚙️ Configuration
-
-Create a `.env` file in the root directory and add your API keys:
-
-```env
-GOOGLE_API_KEY='your_google_gemini_key_here'
-GROQ_API_KEY='your_groq_api_key_here' # Optional, if you want to run the older main.py script
-```
-
----
-
-## 🚀 Usage
-
-### 1. Auto-README Generator (Web App)
-
-Run the Streamlit application to launch the web interface:
+Launch the Streamlit web application:
 
 ```bash
 streamlit run streamlit_app.py
 ```
 
-- Open `http://localhost:8501` in your browser.
-- Paste a GitHub URL, and let Gemini generate your documentation!
+### Dump Repository Context to `output.md`
 
-### 2. Local Repo Loader & RAG Scripts
-
-To clone a repo and dump all context into a single Markdown file (`output.md`):
+Run `loader.py` to clone a repository and save its content to `output.md`:
 
 ```bash
 python loader.py
 ```
 
-To run the local Retrieval-Augmented Generation question-answering script on `output.md`:
+### Run Local RAG Q&A Script
+
+Run `main.py` to index `output.md` into ChromaDB and query the codebase:
 
 ```bash
 python main.py
 ```
-# RepoScribe-with-RAG
+
+## Configuration
+
+The application uses `python-dotenv` to load environment variables from a `.env` file in the root directory:
+
+```env
+GOOGLE_API_KEY='your_google_gemini_key_here'
+GROQ_API_KEY='your_groq_api_key_here'
+```
+
+- `GOOGLE_API_KEY`: Required for generating READMEs with `ChatGoogleGenerativeAI` in `streamlit_app.py`.
+- `GROQ_API_KEY`: Required for executing LLM queries with `ChatGroq` in `main.py`.
+
+## Contributing / License
+
+Not specified
