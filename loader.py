@@ -27,7 +27,11 @@ def repo_name(url):
 
 
 def fetch(url, limit):
-    request = urllib.request.Request(url, headers={'User-Agent': 'RepoScribe', 'Accept': 'application/vnd.github+json'})
+    import os
+    headers = {'User-Agent': 'RepoScribe', 'Accept': 'application/vnd.github+json'}
+    if token := os.getenv('GITHUB_TOKEN'):
+        headers['Authorization'] = f'Bearer {token}'
+    request = urllib.request.Request(url, headers=headers)
     with urllib.request.urlopen(request, timeout=45) as response:
         data = response.read(limit + 1)
     if len(data) > limit:
