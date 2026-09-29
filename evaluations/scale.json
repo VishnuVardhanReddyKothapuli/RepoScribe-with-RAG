@@ -1,0 +1,82 @@
+{
+  "method": "Synthetic duplicates of the pinned ItsDangerous snapshot. Timing/scale only; not retrieval-quality evidence. Index time is measured under tracemalloc.",
+  "source_revision": "672971d66a2ef9f85151e53283113f33d642dabd",
+  "rows": [
+    {
+      "files": 42,
+      "bytes": 98191,
+      "chunks": 67,
+      "index_ms": 20.73720000043977,
+      "index_peak_bytes": 607930,
+      "latency_ms": {
+        "baseline": {
+          "p50": 0.13280000075610587,
+          "p95": 0.14879999980621506,
+          "samples": 10
+        },
+        "reranked": {
+          "p50": 2.3473000001104083,
+          "p95": 2.4610000000393484,
+          "samples": 10
+        }
+      }
+    },
+    {
+      "files": 210,
+      "bytes": 490955,
+      "chunks": 335,
+      "index_ms": 100.98300000026939,
+      "index_peak_bytes": 2652922,
+      "latency_ms": {
+        "baseline": {
+          "p50": 0.8707499991942313,
+          "p95": 0.9609000007912982,
+          "samples": 10
+        },
+        "reranked": {
+          "p50": 2.271199999995588,
+          "p95": 2.548899999965215,
+          "samples": 10
+        }
+      }
+    },
+    {
+      "files": 420,
+      "bytes": 981910,
+      "chunks": 670,
+      "index_ms": 187.72050000006857,
+      "index_peak_bytes": 5260864,
+      "latency_ms": {
+        "baseline": {
+          "p50": 1.2811500000680098,
+          "p95": 1.7090999990614364,
+          "samples": 10
+        },
+        "reranked": {
+          "p50": 2.722199999880104,
+          "p95": 3.136600000289036,
+          "samples": 10
+        }
+      }
+    },
+    {
+      "files": 840,
+      "bytes": 1963820,
+      "chunks": 1340,
+      "index_ms": 408.5415000008652,
+      "index_peak_bytes": 10507525,
+      "latency_ms": {
+        "baseline": {
+          "p50": 4.58850000086386,
+          "p95": 7.8622999990329845,
+          "samples": 10
+        },
+        "reranked": {
+          "p50": 6.476149999798508,
+          "p95": 7.286399999429705,
+          "samples": 10
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: reposcribe
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt && npm --prefix frontend ci --include=dev && npm --prefix frontend run build
+    startCommand: python -m uvicorn api:app --host 0.0.0.0 --port $PORT --workers 1
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.14.6"
+      - key: NODE_VERSION
+        value: "22.22.0"
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-3.1-flash-lite

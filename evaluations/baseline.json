@@ -1,0 +1,3008 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-29T10:52:33.279723+00:00",
+  "python": "3.14.6",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "repeats": 5,
+  "dataset_sha256": "5b903944d7aa3364bf06a84df3b5e1f396d1999bdc7325cdf3a8778aff8e77cf",
+  "pipeline_sha256": "8bd4d2d234567d0234cffe63b2fe81e4005b2652517498593159af243602660d",
+  "retrieval": "BM25 baseline vs optional lexical coverage/path reranker; not a comparison to the old embedding script",
+  "faithfulness_method": "Live LLM judge, not a lexical proxy; null when not run",
+  "model": null,
+  "repositories": [
+    {
+      "name": "pallets/click",
+      "url": "https://github.com/pallets/click",
+      "revision": "06b2a678741131fd577ce170e23e5ca0aeba0309",
+      "snapshot_sha256": "5091c61d2046270000bad86c9875b929dbee9f7c4c938d706a90bfeda11616df",
+      "scale": {
+        "repository_files": 178,
+        "loaded_files": 155,
+        "skipped_files": 23,
+        "loaded_bytes": 1027591,
+        "chunks": 514
+      },
+      "index_ms": 72.63409999995929,
+      "variants": {
+        "baseline": {
+          "cases": [
+            {
+              "id": "click-purpose",
+              "query": "What is Click and how does it create command line interfaces?",
+              "relevant_files": [
+                "README.md",
+                "docs/why.md"
+              ],
+              "retrieved": {
+                "1": [
+                  {
+                    "id": "S149",
+                    "path": "docs/why.md",
+                    "line": 43
+                  }
+                ],
+                "3": [
+                  {
+                    "id": "S149",
+                    "path": "docs/why.md",
+                    "line": 43
+                  },
+                  {
+                    "id": "S150",
+                    "path": "docs/why.md",
+                    "line": 75
+                  },
+                  {
+                    "id": "S330",
+                    "path": "examples/repo/repo.py",
+                    "line": 1
+                  }
+                ],
+                "5": [
+                  {
+                    "id": "S149",
+                    "path": "docs/why.md",
+                    "line": 43
+                  },
+                  {
+                    "id": "S150",
+                    "path": "docs/why.md",
+                    "line": 75
+                  },
+                  {
+                    "id": "S330",
+                    "path": "examples/repo/repo.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S148",
+                    "path": "docs/why.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S262",
+                    "path": "tests/test_termui.py",
+                    "line": 169
+                  }
+                ],
+                "10": [
+                  {
+                    "id": "S149",
+                    "path": "docs/why.md",
+                    "line": 43
+                  },
+                  {
+                    "id": "S150",
+                    "path": "docs/why.md",
+                    "line": 75
+                  },
+                  {
+                    "id": "S330",
+                    "path": "examples/repo/repo.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S148",
+                    "path": "docs/why.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S262",
+                    "path": "tests/test_termui.py",
+                    "line": 169
+                  },
+                  {
+                    "id": "S132",
+                    "path": "docs/standalone-apps.md",
+                    "line": 90
+                  },
+                  {
+                    "id": "S35",
+                    "path": "README.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S71",
+                    "path": "docs/complex.md",
+                    "line": 138
+                  },
+                  {
+                    "id": "S86",
+                    "path": "docs/entry-points.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S99",
+                    "path": "docs/index.md",
+                    "line": 1
+                  }
+                ]
+              },
+              "recall": {
+                "1": 0.5,
+                "3": 0.5,
+                "5": 0.5,
+                "10": 1.0
+              }
+            },
+            {
+              "id": "click-testing",
+              "query": "How do I test a command with CliRunner and invoke?",
+              "relevant_files": [
+                "docs/testing.md",
+                "src/click/testing.py"
+              ],
+              "retrieved": {
+                "1": [
+                  {
+                    "id": "S256",
+                    "path": "tests/test_stream_lifecycle.py",
+                    "line": 227
+                  }
+                ],
+                "3": [
+                  {
+                    "id": "S256",
+                    "path": "tests/test_stream_lifecycle.py",
+                    "line": 227
+                  },
+                  {
+                    "id": "S257",
+                    "path": "tests/test_stream_lifecycle.py",
+                    "line": 304
+                  },
+                  {
+                    "id": "S290",
+                    "path": "tests/test_testing.py",
+                    "line": 1
+                  }
+                ],
+                "5": [
+                  {
+                    "id": "S256",
+                    "path": "tests/test_stream_lifecycle.py",
+                    "line": 227
+                  },
+                  {
+                    "id": "S257",
+                    "path": "tests/test_stream_lifecycle.py",
+                    "line": 304
+                  },
+                  {
+                    "id": "S290",
+                    "path": "tests/test_testing.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S291",
+                    "path": "tests/test_testing.py",
+                    "line": 89
+                  },
+                  {
+                    "id": "S255",
+                    "path": "tests/test_stream_lifecycle.py",
+                    "line": 152
+                  }
+                ],
+                "10": [
+                  {
+                    "id": "S256",
+                    "path": "tests/test_stream_lifecycle.py",
+                    "line": 227
+                  },
+                  {
+                    "id": "S257",
+                    "path": "tests/test_stream_lifecycle.py",
+                    "line": 304
+                  },
+                  {
+                    "id": "S290",
+                    "path": "tests/test_testing.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S291",
+                    "path": "tests/test_testing.py",
+                    "line": 89
+                  },
+                  {
+                    "id": "S255",
+                    "path": "tests/test_stream_lifecycle.py",
+                    "line": 152
+                  },
+                  {
+                    "id": "S296",
+                    "path": "tests/test_testing.py",
+                    "line": 530
+                  },
+                  {
+                    "id": "S135",
+                    "path": "docs/testing.md",
+                    "line": 113
+                  },
+                  {
+                    "id": "S295",
+                    "path": "tests/test_testing.py",
+                    "line": 463
+                  },
+                  {
+                    "id": "S134",
+                    "path": "docs/testing.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S292",
+                    "path": "tests/test_testing.py",
+                    "line": 179
+                  }
+                ]
+              },
+              "recall": {
+                "1": 0.0,
+                "3": 0.0,
+                "5": 0.0,
+                "10": 0.5
+              }
+            },
+            {
+              "id": "click-options",
+              "query": "How do option decorators define command parameters?",
+              "relevant_files": [
+                "docs/options.md",
+                "src/click/decorators.py"
+              ],
+              "retrieved": {
+                "1": [
+                  {
+                    "id": "S16",
+                    "path": "CHANGES.md",
+                    "line": 656
+                  }
+                ],
+                "3": [
+                  {
+                    "id": "S16",
+                    "path": "CHANGES.md",
+                    "line": 656
+                  },
+                  {
+                    "id": "S102",
+                    "path": "docs/option-decorators.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S15",
+                    "path": "CHANGES.md",
+                    "line": 599
+                  }
+                ],
+                "5": [
+                  {
+                    "id": "S16",
+                    "path": "CHANGES.md",
+                    "line": 656
+                  },
+                  {
+                    "id": "S102",
+                    "path": "docs/option-decorators.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S15",
+                    "path": "CHANGES.md",
+                    "line": 599
+                  },
+                  {
+                    "id": "S337",
+                    "path": "src/click/__init__.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S54",
+                    "path": "docs/click-concepts.md",
+                    "line": 1
+                  }
+                ],
+                "10": [
+                  {
+                    "id": "S16",
+                    "path": "CHANGES.md",
+                    "line": 656
+                  },
+                  {
+                    "id": "S102",
+                    "path": "docs/option-decorators.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S15",
+                    "path": "CHANGES.md",
+                    "line": 599
+                  },
+                  {
+                    "id": "S337",
+                    "path": "src/click/__init__.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S54",
+                    "path": "docs/click-concepts.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S48",
+                    "path": "docs/api.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S107",
+                    "path": "docs/options.md",
+                    "line": 287
+                  },
+                  {
+                    "id": "S124",
+                    "path": "docs/quickstart.md",
+                    "line": 130
+                  },
+                  {
+                    "id": "S374",
+                    "path": "src/click/decorators.py",
+                    "line": 306
+                  },
+                  {
+                    "id": "S17",
+                    "path": "CHANGES.md",
+                    "line": 723
+                  }
+                ]
+              },
+              "recall": {
+                "1": 0.0,
+                "3": 0.0,
+                "5": 0.0,
+                "10": 1.0
+              }
+            },
+            {
+              "id": "click-license",
+              "query": "What license and redistribution conditions apply?",
+              "relevant_files": [
+                "LICENSE.txt"
+              ],
+              "retrieved": {
+                "1": [
+                  {
+                    "id": "S34",
+                    "path": "LICENSE.txt",
+                    "line": 1
+                  }
+                ],
+                "3": [
+                  {
+                    "id": "S34",
+                    "path": "LICENSE.txt",
+                    "line": 1
+                  },
+                  {
+                    "id": "S36",
+                    "path": "pyproject.toml",
+                    "line": 1
+                  },
+                  {
+                    "id": "S101",
+                    "path": "docs/license.md",
+                    "line": 1
+                  }
+                ],
+                "5": [
+                  {
+                    "id": "S34",
+                    "path": "LICENSE.txt",
+                    "line": 1
+                  },
+                  {
+                    "id": "S36",
+                    "path": "pyproject.toml",
+                    "line": 1
+                  },
+                  {
+                    "id": "S101",
+                    "path": "docs/license.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S100",
+                    "path": "docs/index.md",
+                    "line": 142
+                  },
+                  {
+                    "id": "S131",
+                    "path": "docs/standalone-apps.md",
+                    "line": 1
+                  }
+                ],
+                "10": [
+                  {
+                    "id": "S34",
+                    "path": "LICENSE.txt",
+                    "line": 1
+                  },
+                  {
+                    "id": "S36",
+                    "path": "pyproject.toml",
+                    "line": 1
+                  },
+                  {
+                    "id": "S101",
+                    "path": "docs/license.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S100",
+                    "path": "docs/index.md",
+                    "line": 142
+                  },
+                  {
+                    "id": "S131",
+                    "path": "docs/standalone-apps.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S37",
+                    "path": "pyproject.toml",
+                    "line": 127
+                  },
+                  {
+                    "id": "S79",
+                    "path": "docs/contributing.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S259",
+                    "path": "tests/test_stream_lifecycle.py",
+                    "line": 483
+                  },
+                  {
+                    "id": "S99",
+                    "path": "docs/index.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S288",
+                    "path": "tests/test_termui.py",
+                    "line": 1912
+                  }
+                ]
+              },
+              "recall": {
+                "1": 1.0,
+                "3": 1.0,
+                "5": 1.0,
+                "10": 1.0
+              }
+            }
+          ],
+          "recall": {
+            "1": 0.375,
+            "3": 0.375,
+            "5": 0.375,
+            "10": 0.875
+          },
+          "latency_ms": {
+            "k": 5,
+            "p50": 1.7713999999955377,
+            "p95": 1.9334999999500724,
+            "samples": 20
+          },
+          "generation": null,
+          "faithfulness": null,
+          "status": "not_run_offline_mode"
+        },
+        "reranked": {
+          "cases": [
+            {
+              "id": "click-purpose",
+              "query": "What is Click and how does it create command line interfaces?",
+              "relevant_files": [
+                "README.md",
+                "docs/why.md"
+              ],
+              "retrieved": {
+                "1": [
+                  {
+                    "id": "S149",
+                    "path": "docs/why.md",
+                    "line": 43
+                  }
+                ],
+                "3": [
+                  {
+                    "id": "S149",
+                    "path": "docs/why.md",
+                    "line": 43
+                  },
+                  {
+                    "id": "S330",
+                    "path": "examples/repo/repo.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S148",
+                    "path": "docs/why.md",
+                    "line": 1
+                  }
+                ],
+                "5": [
+                  {
+                    "id": "S149",
+                    "path": "docs/why.md",
+                    "line": 43
+                  },
+                  {
+                    "id": "S330",
+                    "path": "examples/repo/repo.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S148",
+                    "path": "docs/why.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S150",
+                    "path": "docs/why.md",
+                    "line": 75
+                  },
+                  {
+                    "id": "S262",
+                    "path": "tests/test_termui.py",
+                    "line": 169
+                  }
+                ],
+                "10": [
+                  {
+                    "id": "S56",
+                    "path": "docs/command-line-reference.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S372",
+                    "path": "src/click/decorators.py",
+                    "line": 156
+                  },
+                  {
+                    "id": "S149",
+                    "path": "docs/why.md",
+                    "line": 43
+                  },
+                  {
+                    "id": "S330",
+                    "path": "examples/repo/repo.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S148",
+                    "path": "docs/why.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S54",
+                    "path": "docs/click-concepts.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S150",
+                    "path": "docs/why.md",
+                    "line": 75
+                  },
+                  {
+                    "id": "S262",
+                    "path": "tests/test_termui.py",
+                    "line": 169
+                  },
+                  {
+                    "id": "S132",
+                    "path": "docs/standalone-apps.md",
+                    "line": 90
+                  },
+                  {
+                    "id": "S35",
+                    "path": "README.md",
+                    "line": 1
+                  }
+                ]
+              },
+              "recall": {
+                "1": 0.5,
+                "3": 0.5,
+                "5": 0.5,
+                "10": 1.0
+              }
+            },
+            {
+              "id": "click-testing",
+              "query": "How do I test a command with CliRunner and invoke?",
+              "relevant_files": [
+                "docs/testing.md",
+                "src/click/testing.py"
+              ],
+              "retrieved": {
+                "1": [
+                  {
+                    "id": "S256",
+                    "path": "tests/test_stream_lifecycle.py",
+                    "line": 227
+                  }
+                ],
+                "3": [
+                  {
+                    "id": "S256",
+                    "path": "tests/test_stream_lifecycle.py",
+                    "line": 227
+                  },
+                  {
+                    "id": "S257",
+                    "path": "tests/test_stream_lifecycle.py",
+                    "line": 304
+                  },
+                  {
+                    "id": "S290",
+                    "path": "tests/test_testing.py",
+                    "line": 1
+                  }
+                ],
+                "5": [
+                  {
+                    "id": "S256",
+                    "path": "tests/test_stream_lifecycle.py",
+                    "line": 227
+                  },
+                  {
+                    "id": "S257",
+                    "path": "tests/test_stream_lifecycle.py",
+                    "line": 304
+                  },
+                  {
+                    "id": "S290",
+                    "path": "tests/test_testing.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S291",
+                    "path": "tests/test_testing.py",
+                    "line": 89
+                  },
+                  {
+                    "id": "S255",
+                    "path": "tests/test_stream_lifecycle.py",
+                    "line": 152
+                  }
+                ],
+                "10": [
+                  {
+                    "id": "S256",
+                    "path": "tests/test_stream_lifecycle.py",
+                    "line": 227
+                  },
+                  {
+                    "id": "S257",
+                    "path": "tests/test_stream_lifecycle.py",
+                    "line": 304
+                  },
+                  {
+                    "id": "S290",
+                    "path": "tests/test_testing.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S291",
+                    "path": "tests/test_testing.py",
+                    "line": 89
+                  },
+                  {
+                    "id": "S255",
+                    "path": "tests/test_stream_lifecycle.py",
+                    "line": 152
+                  },
+                  {
+                    "id": "S296",
+                    "path": "tests/test_testing.py",
+                    "line": 530
+                  },
+                  {
+                    "id": "S295",
+                    "path": "tests/test_testing.py",
+                    "line": 463
+                  },
+                  {
+                    "id": "S292",
+                    "path": "tests/test_testing.py",
+                    "line": 179
+                  },
+                  {
+                    "id": "S175",
+                    "path": "tests/test_basic.py",
+                    "line": 176
+                  },
+                  {
+                    "id": "S299",
+                    "path": "tests/test_testing.py",
+                    "line": 754
+                  }
+                ]
+              },
+              "recall": {
+                "1": 0.0,
+                "3": 0.0,
+                "5": 0.0,
+                "10": 0.0
+              }
+            },
+            {
+              "id": "click-options",
+              "query": "How do option decorators define command parameters?",
+              "relevant_files": [
+                "docs/options.md",
+                "src/click/decorators.py"
+              ],
+              "retrieved": {
+                "1": [
+                  {
+                    "id": "S102",
+                    "path": "docs/option-decorators.md",
+                    "line": 1
+                  }
+                ],
+                "3": [
+                  {
+                    "id": "S102",
+                    "path": "docs/option-decorators.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S15",
+                    "path": "CHANGES.md",
+                    "line": 599
+                  },
+                  {
+                    "id": "S374",
+                    "path": "src/click/decorators.py",
+                    "line": 306
+                  }
+                ],
+                "5": [
+                  {
+                    "id": "S102",
+                    "path": "docs/option-decorators.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S15",
+                    "path": "CHANGES.md",
+                    "line": 599
+                  },
+                  {
+                    "id": "S374",
+                    "path": "src/click/decorators.py",
+                    "line": 306
+                  },
+                  {
+                    "id": "S375",
+                    "path": "src/click/decorators.py",
+                    "line": 375
+                  },
+                  {
+                    "id": "S16",
+                    "path": "CHANGES.md",
+                    "line": 656
+                  }
+                ],
+                "10": [
+                  {
+                    "id": "S102",
+                    "path": "docs/option-decorators.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S15",
+                    "path": "CHANGES.md",
+                    "line": 599
+                  },
+                  {
+                    "id": "S374",
+                    "path": "src/click/decorators.py",
+                    "line": 306
+                  },
+                  {
+                    "id": "S375",
+                    "path": "src/click/decorators.py",
+                    "line": 375
+                  },
+                  {
+                    "id": "S372",
+                    "path": "src/click/decorators.py",
+                    "line": 156
+                  },
+                  {
+                    "id": "S376",
+                    "path": "src/click/decorators.py",
+                    "line": 441
+                  },
+                  {
+                    "id": "S501",
+                    "path": "tests/typing/typing_confirmation_option.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S119",
+                    "path": "docs/parameters.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S16",
+                    "path": "CHANGES.md",
+                    "line": 656
+                  },
+                  {
+                    "id": "S54",
+                    "path": "docs/click-concepts.md",
+                    "line": 1
+                  }
+                ]
+              },
+              "recall": {
+                "1": 0.0,
+                "3": 0.5,
+                "5": 0.5,
+                "10": 0.5
+              }
+            },
+            {
+              "id": "click-license",
+              "query": "What license and redistribution conditions apply?",
+              "relevant_files": [
+                "LICENSE.txt"
+              ],
+              "retrieved": {
+                "1": [
+                  {
+                    "id": "S34",
+                    "path": "LICENSE.txt",
+                    "line": 1
+                  }
+                ],
+                "3": [
+                  {
+                    "id": "S34",
+                    "path": "LICENSE.txt",
+                    "line": 1
+                  },
+                  {
+                    "id": "S36",
+                    "path": "pyproject.toml",
+                    "line": 1
+                  },
+                  {
+                    "id": "S101",
+                    "path": "docs/license.md",
+                    "line": 1
+                  }
+                ],
+                "5": [
+                  {
+                    "id": "S34",
+                    "path": "LICENSE.txt",
+                    "line": 1
+                  },
+                  {
+                    "id": "S36",
+                    "path": "pyproject.toml",
+                    "line": 1
+                  },
+                  {
+                    "id": "S101",
+                    "path": "docs/license.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S100",
+                    "path": "docs/index.md",
+                    "line": 142
+                  },
+                  {
+                    "id": "S131",
+                    "path": "docs/standalone-apps.md",
+                    "line": 1
+                  }
+                ],
+                "10": [
+                  {
+                    "id": "S34",
+                    "path": "LICENSE.txt",
+                    "line": 1
+                  },
+                  {
+                    "id": "S36",
+                    "path": "pyproject.toml",
+                    "line": 1
+                  },
+                  {
+                    "id": "S101",
+                    "path": "docs/license.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S100",
+                    "path": "docs/index.md",
+                    "line": 142
+                  },
+                  {
+                    "id": "S131",
+                    "path": "docs/standalone-apps.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S37",
+                    "path": "pyproject.toml",
+                    "line": 127
+                  },
+                  {
+                    "id": "S79",
+                    "path": "docs/contributing.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S259",
+                    "path": "tests/test_stream_lifecycle.py",
+                    "line": 483
+                  },
+                  {
+                    "id": "S99",
+                    "path": "docs/index.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S288",
+                    "path": "tests/test_termui.py",
+                    "line": 1912
+                  }
+                ]
+              },
+              "recall": {
+                "1": 1.0,
+                "3": 1.0,
+                "5": 1.0,
+                "10": 1.0
+              }
+            }
+          ],
+          "recall": {
+            "1": 0.375,
+            "3": 0.5,
+            "5": 0.5,
+            "10": 0.625
+          },
+          "latency_ms": {
+            "k": 5,
+            "p50": 3.9280499999847507,
+            "p95": 4.462199999977656,
+            "samples": 20
+          },
+          "generation": null,
+          "faithfulness": null,
+          "status": "not_run_offline_mode"
+        }
+      }
+    },
+    {
+      "name": "pallets/itsdangerous",
+      "url": "https://github.com/pallets/itsdangerous",
+      "revision": "672971d66a2ef9f85151e53283113f33d642dabd",
+      "snapshot_sha256": "c8cd35077a1a06fdf1a0d445a92d293263394cbdeaf4199520e6fedc5c659dec",
+      "scale": {
+        "repository_files": 50,
+        "loaded_files": 42,
+        "skipped_files": 8,
+        "loaded_bytes": 98191,
+        "chunks": 67
+      },
+      "index_ms": 9.473800000023402,
+      "variants": {
+        "baseline": {
+          "cases": [
+            {
+              "id": "itsdangerous-purpose",
+              "query": "How does ItsDangerous sign data to detect tampering?",
+              "relevant_files": [
+                "README.md",
+                "docs/concepts.rst"
+              ],
+              "retrieved": {
+                "1": [
+                  {
+                    "id": "S22",
+                    "path": "docs/index.rst",
+                    "line": 1
+                  }
+                ],
+                "3": [
+                  {
+                    "id": "S22",
+                    "path": "docs/index.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S8",
+                    "path": "README.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S24",
+                    "path": "docs/serializer.rst",
+                    "line": 1
+                  }
+                ],
+                "5": [
+                  {
+                    "id": "S22",
+                    "path": "docs/index.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S8",
+                    "path": "README.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S24",
+                    "path": "docs/serializer.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S41",
+                    "path": "src/itsdangerous/serializer.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S5",
+                    "path": "CHANGES.rst",
+                    "line": 142
+                  }
+                ],
+                "10": [
+                  {
+                    "id": "S22",
+                    "path": "docs/index.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S8",
+                    "path": "README.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S24",
+                    "path": "docs/serializer.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S41",
+                    "path": "src/itsdangerous/serializer.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S5",
+                    "path": "CHANGES.rst",
+                    "line": 142
+                  },
+                  {
+                    "id": "S4",
+                    "path": "CHANGES.rst",
+                    "line": 85
+                  },
+                  {
+                    "id": "S16",
+                    "path": "docs/concepts.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S17",
+                    "path": "docs/concepts.rst",
+                    "line": 68
+                  },
+                  {
+                    "id": "S42",
+                    "path": "src/itsdangerous/serializer.py",
+                    "line": 59
+                  },
+                  {
+                    "id": "S63",
+                    "path": "tests/test_itsdangerous/test_signer.py",
+                    "line": 1
+                  }
+                ]
+              },
+              "recall": {
+                "1": 0.0,
+                "3": 0.5,
+                "5": 0.5,
+                "10": 1.0
+              }
+            },
+            {
+              "id": "itsdangerous-expiry",
+              "query": "How does TimestampSigner reject signatures older than max_age?",
+              "relevant_files": [
+                "src/itsdangerous/timed.py",
+                "docs/timed.rst"
+              ],
+              "retrieved": {
+                "1": [
+                  {
+                    "id": "S27",
+                    "path": "docs/timed.rst",
+                    "line": 1
+                  }
+                ],
+                "3": [
+                  {
+                    "id": "S27",
+                    "path": "docs/timed.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S55",
+                    "path": "src/itsdangerous/timed.py",
+                    "line": 135
+                  },
+                  {
+                    "id": "S53",
+                    "path": "src/itsdangerous/timed.py",
+                    "line": 1
+                  }
+                ],
+                "5": [
+                  {
+                    "id": "S27",
+                    "path": "docs/timed.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S55",
+                    "path": "src/itsdangerous/timed.py",
+                    "line": 135
+                  },
+                  {
+                    "id": "S53",
+                    "path": "src/itsdangerous/timed.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S54",
+                    "path": "src/itsdangerous/timed.py",
+                    "line": 75
+                  },
+                  {
+                    "id": "S65",
+                    "path": "tests/test_itsdangerous/test_timed.py",
+                    "line": 1
+                  }
+                ],
+                "10": [
+                  {
+                    "id": "S27",
+                    "path": "docs/timed.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S55",
+                    "path": "src/itsdangerous/timed.py",
+                    "line": 135
+                  },
+                  {
+                    "id": "S53",
+                    "path": "src/itsdangerous/timed.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S54",
+                    "path": "src/itsdangerous/timed.py",
+                    "line": 75
+                  },
+                  {
+                    "id": "S65",
+                    "path": "tests/test_itsdangerous/test_timed.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S56",
+                    "path": "src/itsdangerous/timed.py",
+                    "line": 203
+                  },
+                  {
+                    "id": "S39",
+                    "path": "src/itsdangerous/exc.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S66",
+                    "path": "tests/test_itsdangerous/test_timed.py",
+                    "line": 76
+                  },
+                  {
+                    "id": "S3",
+                    "path": "CHANGES.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S4",
+                    "path": "CHANGES.rst",
+                    "line": 85
+                  }
+                ]
+              },
+              "recall": {
+                "1": 0.5,
+                "3": 1.0,
+                "5": 1.0,
+                "10": 1.0
+              }
+            },
+            {
+              "id": "itsdangerous-url",
+              "query": "How do URLSafeSerializer and URLSafeTimedSerializer encode URL safe data?",
+              "relevant_files": [
+                "src/itsdangerous/url_safe.py",
+                "docs/url_safe.rst"
+              ],
+              "retrieved": {
+                "1": [
+                  {
+                    "id": "S36",
+                    "path": "src/itsdangerous/__init__.py",
+                    "line": 1
+                  }
+                ],
+                "3": [
+                  {
+                    "id": "S36",
+                    "path": "src/itsdangerous/__init__.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S28",
+                    "path": "docs/url_safe.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S67",
+                    "path": "tests/test_itsdangerous/test_url_safe.py",
+                    "line": 1
+                  }
+                ],
+                "5": [
+                  {
+                    "id": "S36",
+                    "path": "src/itsdangerous/__init__.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S28",
+                    "path": "docs/url_safe.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S67",
+                    "path": "tests/test_itsdangerous/test_url_safe.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S57",
+                    "path": "src/itsdangerous/url_safe.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S22",
+                    "path": "docs/index.rst",
+                    "line": 1
+                  }
+                ],
+                "10": [
+                  {
+                    "id": "S36",
+                    "path": "src/itsdangerous/__init__.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S28",
+                    "path": "docs/url_safe.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S67",
+                    "path": "tests/test_itsdangerous/test_url_safe.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S57",
+                    "path": "src/itsdangerous/url_safe.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S22",
+                    "path": "docs/index.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S38",
+                    "path": "src/itsdangerous/encoding.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S8",
+                    "path": "README.md",
+                    "line": 1
+                  },
+                  {
+                    "id": "S24",
+                    "path": "docs/serializer.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S16",
+                    "path": "docs/concepts.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S17",
+                    "path": "docs/concepts.rst",
+                    "line": 68
+                  }
+                ]
+              },
+              "recall": {
+                "1": 0.0,
+                "3": 0.5,
+                "5": 1.0,
+                "10": 1.0
+              }
+            },
+            {
+              "id": "itsdangerous-license",
+              "query": "What license and redistribution conditions apply?",
+              "relevant_files": [
+                "LICENSE.txt"
+              ],
+              "retrieved": {
+                "1": [
+                  {
+                    "id": "S7",
+                    "path": "LICENSE.txt",
+                    "line": 1
+                  }
+                ],
+                "3": [
+                  {
+                    "id": "S7",
+                    "path": "LICENSE.txt",
+                    "line": 1
+                  },
+                  {
+                    "id": "S23",
+                    "path": "docs/license.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S18",
+                    "path": "docs/concepts.rst",
+                    "line": 147
+                  }
+                ],
+                "5": [
+                  {
+                    "id": "S7",
+                    "path": "LICENSE.txt",
+                    "line": 1
+                  },
+                  {
+                    "id": "S23",
+                    "path": "docs/license.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S18",
+                    "path": "docs/concepts.rst",
+                    "line": 147
+                  },
+                  {
+                    "id": "S49",
+                    "path": "src/itsdangerous/signer.py",
+                    "line": 78
+                  },
+                  {
+                    "id": "S9",
+                    "path": "pyproject.toml",
+                    "line": 1
+                  }
+                ],
+                "10": [
+                  {
+                    "id": "S7",
+                    "path": "LICENSE.txt",
+                    "line": 1
+                  },
+                  {
+                    "id": "S23",
+                    "path": "docs/license.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S18",
+                    "path": "docs/concepts.rst",
+                    "line": 147
+                  },
+                  {
+                    "id": "S49",
+                    "path": "src/itsdangerous/signer.py",
+                    "line": 78
+                  },
+                  {
+                    "id": "S9",
+                    "path": "pyproject.toml",
+                    "line": 1
+                  },
+                  {
+                    "id": "S22",
+                    "path": "docs/index.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S17",
+                    "path": "docs/concepts.rst",
+                    "line": 68
+                  },
+                  {
+                    "id": "S5",
+                    "path": "CHANGES.rst",
+                    "line": 142
+                  }
+                ]
+              },
+              "recall": {
+                "1": 1.0,
+                "3": 1.0,
+                "5": 1.0,
+                "10": 1.0
+              }
+            }
+          ],
+          "recall": {
+            "1": 0.375,
+            "3": 0.75,
+            "5": 0.875,
+            "10": 1.0
+          },
+          "latency_ms": {
+            "k": 5,
+            "p50": 0.15440000001376575,
+            "p95": 0.16969999995808394,
+            "samples": 20
+          },
+          "generation": null,
+          "faithfulness": null,
+          "status": "not_run_offline_mode"
+        },
+        "reranked": {
+          "cases": [
+            {
+              "id": "itsdangerous-purpose",
+              "query": "How does ItsDangerous sign data to detect tampering?",
+              "relevant_files": [
+                "README.md",
+                "docs/concepts.rst"
+              ],
+              "retrieved": {
+                "1": [
+                  {
+                    "id": "S41",
+                    "path": "src/itsdangerous/serializer.py",
+                    "line": 1
+                  }
+                ],
+                "3": [
+                  {
+                    "id": "S41",
+                    "path": "src/itsdangerous/serializer.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S22",
+                    "path": "docs/index.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S42",
+                    "path": "src/itsdangerous/serializer.py",
+                    "line": 59
+                  }
+                ],
+                "5": [
+                  {
+                    "id": "S41",
+                    "path": "src/itsdangerous/serializer.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S22",
+                    "path": "docs/index.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S42",
+                    "path": "src/itsdangerous/serializer.py",
+                    "line": 59
+                  },
+                  {
+                    "id": "S63",
+                    "path": "tests/test_itsdangerous/test_signer.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S65",
+                    "path": "tests/test_itsdangerous/test_timed.py",
+                    "line": 1
+                  }
+                ],
+                "10": [
+                  {
+                    "id": "S41",
+                    "path": "src/itsdangerous/serializer.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S22",
+                    "path": "docs/index.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S42",
+                    "path": "src/itsdangerous/serializer.py",
+                    "line": 59
+                  },
+                  {
+                    "id": "S63",
+                    "path": "tests/test_itsdangerous/test_signer.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S65",
+                    "path": "tests/test_itsdangerous/test_timed.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S45",
+                    "path": "src/itsdangerous/serializer.py",
+                    "line": 244
+                  },
+                  {
+                    "id": "S43",
+                    "path": "src/itsdangerous/serializer.py",
+                    "line": 114
+                  },
+                  {
+                    "id": "S39",
+                    "path": "src/itsdangerous/exc.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S60",
+                    "path": "tests/test_itsdangerous/test_serializer.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S49",
+                    "path": "src/itsdangerous/signer.py",
+                    "line": 78
+                  }
+                ]
+              },
+              "recall": {
+                "1": 0.0,
+                "3": 0.0,
+                "5": 0.0,
+                "10": 0.0
+              }
+            },
+            {
+              "id": "itsdangerous-expiry",
+              "query": "How does TimestampSigner reject signatures older than max_age?",
+              "relevant_files": [
+                "src/itsdangerous/timed.py",
+                "docs/timed.rst"
+              ],
+              "retrieved": {
+                "1": [
+                  {
+                    "id": "S27",
+                    "path": "docs/timed.rst",
+                    "line": 1
+                  }
+                ],
+                "3": [
+                  {
+                    "id": "S27",
+                    "path": "docs/timed.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S55",
+                    "path": "src/itsdangerous/timed.py",
+                    "line": 135
+                  },
+                  {
+                    "id": "S53",
+                    "path": "src/itsdangerous/timed.py",
+                    "line": 1
+                  }
+                ],
+                "5": [
+                  {
+                    "id": "S27",
+                    "path": "docs/timed.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S55",
+                    "path": "src/itsdangerous/timed.py",
+                    "line": 135
+                  },
+                  {
+                    "id": "S53",
+                    "path": "src/itsdangerous/timed.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S54",
+                    "path": "src/itsdangerous/timed.py",
+                    "line": 75
+                  },
+                  {
+                    "id": "S39",
+                    "path": "src/itsdangerous/exc.py",
+                    "line": 1
+                  }
+                ],
+                "10": [
+                  {
+                    "id": "S27",
+                    "path": "docs/timed.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S55",
+                    "path": "src/itsdangerous/timed.py",
+                    "line": 135
+                  },
+                  {
+                    "id": "S53",
+                    "path": "src/itsdangerous/timed.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S54",
+                    "path": "src/itsdangerous/timed.py",
+                    "line": 75
+                  },
+                  {
+                    "id": "S39",
+                    "path": "src/itsdangerous/exc.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S65",
+                    "path": "tests/test_itsdangerous/test_timed.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S3",
+                    "path": "CHANGES.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S4",
+                    "path": "CHANGES.rst",
+                    "line": 85
+                  },
+                  {
+                    "id": "S56",
+                    "path": "src/itsdangerous/timed.py",
+                    "line": 203
+                  },
+                  {
+                    "id": "S66",
+                    "path": "tests/test_itsdangerous/test_timed.py",
+                    "line": 76
+                  }
+                ]
+              },
+              "recall": {
+                "1": 0.5,
+                "3": 1.0,
+                "5": 1.0,
+                "10": 1.0
+              }
+            },
+            {
+              "id": "itsdangerous-url",
+              "query": "How do URLSafeSerializer and URLSafeTimedSerializer encode URL safe data?",
+              "relevant_files": [
+                "src/itsdangerous/url_safe.py",
+                "docs/url_safe.rst"
+              ],
+              "retrieved": {
+                "1": [
+                  {
+                    "id": "S57",
+                    "path": "src/itsdangerous/url_safe.py",
+                    "line": 1
+                  }
+                ],
+                "3": [
+                  {
+                    "id": "S57",
+                    "path": "src/itsdangerous/url_safe.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S28",
+                    "path": "docs/url_safe.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S67",
+                    "path": "tests/test_itsdangerous/test_url_safe.py",
+                    "line": 1
+                  }
+                ],
+                "5": [
+                  {
+                    "id": "S57",
+                    "path": "src/itsdangerous/url_safe.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S28",
+                    "path": "docs/url_safe.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S67",
+                    "path": "tests/test_itsdangerous/test_url_safe.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S36",
+                    "path": "src/itsdangerous/__init__.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S22",
+                    "path": "docs/index.rst",
+                    "line": 1
+                  }
+                ],
+                "10": [
+                  {
+                    "id": "S57",
+                    "path": "src/itsdangerous/url_safe.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S28",
+                    "path": "docs/url_safe.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S67",
+                    "path": "tests/test_itsdangerous/test_url_safe.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S36",
+                    "path": "src/itsdangerous/__init__.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S22",
+                    "path": "docs/index.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S38",
+                    "path": "src/itsdangerous/encoding.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S24",
+                    "path": "docs/serializer.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S16",
+                    "path": "docs/concepts.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S17",
+                    "path": "docs/concepts.rst",
+                    "line": 68
+                  },
+                  {
+                    "id": "S58",
+                    "path": "src/itsdangerous/url_safe.py",
+                    "line": 81
+                  }
+                ]
+              },
+              "recall": {
+                "1": 0.5,
+                "3": 1.0,
+                "5": 1.0,
+                "10": 1.0
+              }
+            },
+            {
+              "id": "itsdangerous-license",
+              "query": "What license and redistribution conditions apply?",
+              "relevant_files": [
+                "LICENSE.txt"
+              ],
+              "retrieved": {
+                "1": [
+                  {
+                    "id": "S7",
+                    "path": "LICENSE.txt",
+                    "line": 1
+                  }
+                ],
+                "3": [
+                  {
+                    "id": "S7",
+                    "path": "LICENSE.txt",
+                    "line": 1
+                  },
+                  {
+                    "id": "S23",
+                    "path": "docs/license.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S18",
+                    "path": "docs/concepts.rst",
+                    "line": 147
+                  }
+                ],
+                "5": [
+                  {
+                    "id": "S7",
+                    "path": "LICENSE.txt",
+                    "line": 1
+                  },
+                  {
+                    "id": "S23",
+                    "path": "docs/license.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S18",
+                    "path": "docs/concepts.rst",
+                    "line": 147
+                  },
+                  {
+                    "id": "S49",
+                    "path": "src/itsdangerous/signer.py",
+                    "line": 78
+                  },
+                  {
+                    "id": "S9",
+                    "path": "pyproject.toml",
+                    "line": 1
+                  }
+                ],
+                "10": [
+                  {
+                    "id": "S7",
+                    "path": "LICENSE.txt",
+                    "line": 1
+                  },
+                  {
+                    "id": "S23",
+                    "path": "docs/license.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S18",
+                    "path": "docs/concepts.rst",
+                    "line": 147
+                  },
+                  {
+                    "id": "S49",
+                    "path": "src/itsdangerous/signer.py",
+                    "line": 78
+                  },
+                  {
+                    "id": "S9",
+                    "path": "pyproject.toml",
+                    "line": 1
+                  },
+                  {
+                    "id": "S22",
+                    "path": "docs/index.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S17",
+                    "path": "docs/concepts.rst",
+                    "line": 68
+                  },
+                  {
+                    "id": "S5",
+                    "path": "CHANGES.rst",
+                    "line": 142
+                  }
+                ]
+              },
+              "recall": {
+                "1": 1.0,
+                "3": 1.0,
+                "5": 1.0,
+                "10": 1.0
+              }
+            }
+          ],
+          "recall": {
+            "1": 0.5,
+            "3": 0.75,
+            "5": 0.75,
+            "10": 0.75
+          },
+          "latency_ms": {
+            "k": 5,
+            "p50": 1.7184999999813044,
+            "p95": 2.116300000011506,
+            "samples": 20
+          },
+          "generation": null,
+          "faithfulness": null,
+          "status": "not_run_offline_mode"
+        }
+      }
+    },
+    {
+      "name": "psf/requests",
+      "url": "https://github.com/psf/requests",
+      "revision": "611c6162cbc4ac2020a2f91c7cfa4f3abf9bbb60",
+      "snapshot_sha256": "438b12f5355efa83c2eda040c0d2ff3b9d7a586cf534d286468325f91a5c1d44",
+      "scale": {
+        "repository_files": 130,
+        "loaded_files": 92,
+        "skipped_files": 38,
+        "loaded_bytes": 523053,
+        "chunks": 280
+      },
+      "index_ms": 36.685400000010304,
+      "variants": {
+        "baseline": {
+          "cases": [
+            {
+              "id": "requests-install",
+              "query": "How do I install requests with pip?",
+              "relevant_files": [
+                "README.md",
+                "docs/user/install.rst"
+              ],
+              "retrieved": {
+                "1": [
+                  {
+                    "id": "S159",
+                    "path": "docs/user/install.rst",
+                    "line": 1
+                  }
+                ],
+                "3": [
+                  {
+                    "id": "S159",
+                    "path": "docs/user/install.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S120",
+                    "path": ".github/workflows/typecheck.yml",
+                    "line": 1
+                  },
+                  {
+                    "id": "S119",
+                    "path": ".github/workflows/run-tests.yml",
+                    "line": 1
+                  }
+                ],
+                "5": [
+                  {
+                    "id": "S159",
+                    "path": "docs/user/install.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S120",
+                    "path": ".github/workflows/typecheck.yml",
+                    "line": 1
+                  },
+                  {
+                    "id": "S119",
+                    "path": ".github/workflows/run-tests.yml",
+                    "line": 1
+                  },
+                  {
+                    "id": "S39",
+                    "path": "Makefile",
+                    "line": 1
+                  },
+                  {
+                    "id": "S148",
+                    "path": "docs/user/advanced.rst",
+                    "line": 681
+                  }
+                ],
+                "10": [
+                  {
+                    "id": "S159",
+                    "path": "docs/user/install.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S120",
+                    "path": ".github/workflows/typecheck.yml",
+                    "line": 1
+                  },
+                  {
+                    "id": "S119",
+                    "path": ".github/workflows/run-tests.yml",
+                    "line": 1
+                  },
+                  {
+                    "id": "S39",
+                    "path": "Makefile",
+                    "line": 1
+                  },
+                  {
+                    "id": "S148",
+                    "path": "docs/user/advanced.rst",
+                    "line": 681
+                  },
+                  {
+                    "id": "S115",
+                    "path": ".github/workflows/lint.yml",
+                    "line": 1
+                  },
+                  {
+                    "id": "S147",
+                    "path": "docs/user/advanced.rst",
+                    "line": 612
+                  },
+                  {
+                    "id": "S150",
+                    "path": "docs/user/advanced.rst",
+                    "line": 800
+                  },
+                  {
+                    "id": "S12",
+                    "path": "HISTORY.md",
+                    "line": 339
+                  },
+                  {
+                    "id": "S117",
+                    "path": ".github/workflows/publish.yml",
+                    "line": 1
+                  }
+                ]
+              },
+              "recall": {
+                "1": 0.5,
+                "3": 0.5,
+                "5": 0.5,
+                "10": 0.5
+              }
+            },
+            {
+              "id": "requests-timeout",
+              "query": "How do I specify a timeout for a requests get call?",
+              "relevant_files": [
+                "docs/user/quickstart.rst",
+                "src/requests/api.py"
+              ],
+              "retrieved": {
+                "1": [
+                  {
+                    "id": "S154",
+                    "path": "docs/user/advanced.rst",
+                    "line": 1072
+                  }
+                ],
+                "3": [
+                  {
+                    "id": "S154",
+                    "path": "docs/user/advanced.rst",
+                    "line": 1072
+                  },
+                  {
+                    "id": "S140",
+                    "path": "docs/user/advanced.rst",
+                    "line": 128
+                  },
+                  {
+                    "id": "S139",
+                    "path": "docs/user/advanced.rst",
+                    "line": 78
+                  }
+                ],
+                "5": [
+                  {
+                    "id": "S154",
+                    "path": "docs/user/advanced.rst",
+                    "line": 1072
+                  },
+                  {
+                    "id": "S140",
+                    "path": "docs/user/advanced.rst",
+                    "line": 128
+                  },
+                  {
+                    "id": "S139",
+                    "path": "docs/user/advanced.rst",
+                    "line": 78
+                  },
+                  {
+                    "id": "S167",
+                    "path": "docs/user/quickstart.rst",
+                    "line": 492
+                  },
+                  {
+                    "id": "S161",
+                    "path": "docs/user/quickstart.rst",
+                    "line": 78
+                  }
+                ],
+                "10": [
+                  {
+                    "id": "S154",
+                    "path": "docs/user/advanced.rst",
+                    "line": 1072
+                  },
+                  {
+                    "id": "S140",
+                    "path": "docs/user/advanced.rst",
+                    "line": 128
+                  },
+                  {
+                    "id": "S139",
+                    "path": "docs/user/advanced.rst",
+                    "line": 78
+                  },
+                  {
+                    "id": "S167",
+                    "path": "docs/user/quickstart.rst",
+                    "line": 492
+                  },
+                  {
+                    "id": "S161",
+                    "path": "docs/user/quickstart.rst",
+                    "line": 78
+                  },
+                  {
+                    "id": "S150",
+                    "path": "docs/user/advanced.rst",
+                    "line": 800
+                  },
+                  {
+                    "id": "S151",
+                    "path": "docs/user/advanced.rst",
+                    "line": 880
+                  },
+                  {
+                    "id": "S162",
+                    "path": "docs/user/quickstart.rst",
+                    "line": 143
+                  },
+                  {
+                    "id": "S141",
+                    "path": "docs/user/advanced.rst",
+                    "line": 203
+                  },
+                  {
+                    "id": "S157",
+                    "path": "docs/user/authentication.rst",
+                    "line": 73
+                  }
+                ]
+              },
+              "recall": {
+                "1": 0.0,
+                "3": 0.0,
+                "5": 0.5,
+                "10": 0.5
+              }
+            },
+            {
+              "id": "requests-session",
+              "query": "How do Session objects persist cookies and reuse connections?",
+              "relevant_files": [
+                "docs/user/advanced.rst",
+                "src/requests/sessions.py"
+              ],
+              "retrieved": {
+                "1": [
+                  {
+                    "id": "S138",
+                    "path": "docs/user/advanced.rst",
+                    "line": 1
+                  }
+                ],
+                "3": [
+                  {
+                    "id": "S138",
+                    "path": "docs/user/advanced.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S143",
+                    "path": "docs/user/advanced.rst",
+                    "line": 322
+                  },
+                  {
+                    "id": "S25",
+                    "path": "HISTORY.md",
+                    "line": 1329
+                  }
+                ],
+                "5": [
+                  {
+                    "id": "S138",
+                    "path": "docs/user/advanced.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S143",
+                    "path": "docs/user/advanced.rst",
+                    "line": 322
+                  },
+                  {
+                    "id": "S25",
+                    "path": "HISTORY.md",
+                    "line": 1329
+                  },
+                  {
+                    "id": "S26",
+                    "path": "HISTORY.md",
+                    "line": 1392
+                  },
+                  {
+                    "id": "S139",
+                    "path": "docs/user/advanced.rst",
+                    "line": 78
+                  }
+                ],
+                "10": [
+                  {
+                    "id": "S138",
+                    "path": "docs/user/advanced.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S143",
+                    "path": "docs/user/advanced.rst",
+                    "line": 322
+                  },
+                  {
+                    "id": "S25",
+                    "path": "HISTORY.md",
+                    "line": 1329
+                  },
+                  {
+                    "id": "S26",
+                    "path": "HISTORY.md",
+                    "line": 1392
+                  },
+                  {
+                    "id": "S139",
+                    "path": "docs/user/advanced.rst",
+                    "line": 78
+                  },
+                  {
+                    "id": "S234",
+                    "path": "src/requests/sessions.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S179",
+                    "path": "src/requests/adapters.py",
+                    "line": 160
+                  },
+                  {
+                    "id": "S61",
+                    "path": "docs/api.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S140",
+                    "path": "docs/user/advanced.rst",
+                    "line": 128
+                  },
+                  {
+                    "id": "S27",
+                    "path": "HISTORY.md",
+                    "line": 1449
+                  }
+                ]
+              },
+              "recall": {
+                "1": 0.5,
+                "3": 0.5,
+                "5": 0.5,
+                "10": 1.0
+              }
+            },
+            {
+              "id": "requests-auth",
+              "query": "How do HTTPBasicAuth and HTTPDigestAuth authenticate a request?",
+              "relevant_files": [
+                "src/requests/auth.py",
+                "docs/user/authentication.rst"
+              ],
+              "retrieved": {
+                "1": [
+                  {
+                    "id": "S84",
+                    "path": "tests/test_lowlevel.py",
+                    "line": 202
+                  }
+                ],
+                "3": [
+                  {
+                    "id": "S84",
+                    "path": "tests/test_lowlevel.py",
+                    "line": 202
+                  },
+                  {
+                    "id": "S156",
+                    "path": "docs/user/authentication.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S145",
+                    "path": "docs/user/advanced.rst",
+                    "line": 461
+                  }
+                ],
+                "5": [
+                  {
+                    "id": "S84",
+                    "path": "tests/test_lowlevel.py",
+                    "line": 202
+                  },
+                  {
+                    "id": "S156",
+                    "path": "docs/user/authentication.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S145",
+                    "path": "docs/user/advanced.rst",
+                    "line": 461
+                  },
+                  {
+                    "id": "S150",
+                    "path": "docs/user/advanced.rst",
+                    "line": 800
+                  },
+                  {
+                    "id": "S83",
+                    "path": "tests/test_lowlevel.py",
+                    "line": 144
+                  }
+                ],
+                "10": [
+                  {
+                    "id": "S84",
+                    "path": "tests/test_lowlevel.py",
+                    "line": 202
+                  },
+                  {
+                    "id": "S156",
+                    "path": "docs/user/authentication.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S145",
+                    "path": "docs/user/advanced.rst",
+                    "line": 461
+                  },
+                  {
+                    "id": "S150",
+                    "path": "docs/user/advanced.rst",
+                    "line": 800
+                  },
+                  {
+                    "id": "S83",
+                    "path": "tests/test_lowlevel.py",
+                    "line": 144
+                  },
+                  {
+                    "id": "S193",
+                    "path": "src/requests/auth.py",
+                    "line": 79
+                  },
+                  {
+                    "id": "S196",
+                    "path": "src/requests/auth.py",
+                    "line": 290
+                  },
+                  {
+                    "id": "S61",
+                    "path": "docs/api.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S82",
+                    "path": "tests/test_lowlevel.py",
+                    "line": 76
+                  },
+                  {
+                    "id": "S10",
+                    "path": "HISTORY.md",
+                    "line": 201
+                  }
+                ]
+              },
+              "recall": {
+                "1": 0.0,
+                "3": 0.5,
+                "5": 0.5,
+                "10": 1.0
+              }
+            }
+          ],
+          "recall": {
+            "1": 0.25,
+            "3": 0.375,
+            "5": 0.5,
+            "10": 0.75
+          },
+          "latency_ms": {
+            "k": 5,
+            "p50": 0.6563000000028296,
+            "p95": 0.8083000000169704,
+            "samples": 20
+          },
+          "generation": null,
+          "faithfulness": null,
+          "status": "not_run_offline_mode"
+        },
+        "reranked": {
+          "cases": [
+            {
+              "id": "requests-install",
+              "query": "How do I install requests with pip?",
+              "relevant_files": [
+                "README.md",
+                "docs/user/install.rst"
+              ],
+              "retrieved": {
+                "1": [
+                  {
+                    "id": "S159",
+                    "path": "docs/user/install.rst",
+                    "line": 1
+                  }
+                ],
+                "3": [
+                  {
+                    "id": "S159",
+                    "path": "docs/user/install.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S148",
+                    "path": "docs/user/advanced.rst",
+                    "line": 681
+                  },
+                  {
+                    "id": "S147",
+                    "path": "docs/user/advanced.rst",
+                    "line": 612
+                  }
+                ],
+                "5": [
+                  {
+                    "id": "S159",
+                    "path": "docs/user/install.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S148",
+                    "path": "docs/user/advanced.rst",
+                    "line": 681
+                  },
+                  {
+                    "id": "S147",
+                    "path": "docs/user/advanced.rst",
+                    "line": 612
+                  },
+                  {
+                    "id": "S262",
+                    "path": "src/requests/utils.py",
+                    "line": 690
+                  },
+                  {
+                    "id": "S120",
+                    "path": ".github/workflows/typecheck.yml",
+                    "line": 1
+                  }
+                ],
+                "10": [
+                  {
+                    "id": "S159",
+                    "path": "docs/user/install.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S256",
+                    "path": "src/requests/utils.py",
+                    "line": 233
+                  },
+                  {
+                    "id": "S148",
+                    "path": "docs/user/advanced.rst",
+                    "line": 681
+                  },
+                  {
+                    "id": "S147",
+                    "path": "docs/user/advanced.rst",
+                    "line": 612
+                  },
+                  {
+                    "id": "S262",
+                    "path": "src/requests/utils.py",
+                    "line": 690
+                  },
+                  {
+                    "id": "S261",
+                    "path": "src/requests/utils.py",
+                    "line": 603
+                  },
+                  {
+                    "id": "S233",
+                    "path": "src/requests/packages.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S183",
+                    "path": "src/requests/adapters.py",
+                    "line": 413
+                  },
+                  {
+                    "id": "S259",
+                    "path": "src/requests/utils.py",
+                    "line": 455
+                  },
+                  {
+                    "id": "S260",
+                    "path": "src/requests/utils.py",
+                    "line": 523
+                  }
+                ]
+              },
+              "recall": {
+                "1": 0.5,
+                "3": 0.5,
+                "5": 0.5,
+                "10": 0.5
+              }
+            },
+            {
+              "id": "requests-timeout",
+              "query": "How do I specify a timeout for a requests get call?",
+              "relevant_files": [
+                "docs/user/quickstart.rst",
+                "src/requests/api.py"
+              ],
+              "retrieved": {
+                "1": [
+                  {
+                    "id": "S154",
+                    "path": "docs/user/advanced.rst",
+                    "line": 1072
+                  }
+                ],
+                "3": [
+                  {
+                    "id": "S154",
+                    "path": "docs/user/advanced.rst",
+                    "line": 1072
+                  },
+                  {
+                    "id": "S140",
+                    "path": "docs/user/advanced.rst",
+                    "line": 128
+                  },
+                  {
+                    "id": "S139",
+                    "path": "docs/user/advanced.rst",
+                    "line": 78
+                  }
+                ],
+                "5": [
+                  {
+                    "id": "S154",
+                    "path": "docs/user/advanced.rst",
+                    "line": 1072
+                  },
+                  {
+                    "id": "S140",
+                    "path": "docs/user/advanced.rst",
+                    "line": 128
+                  },
+                  {
+                    "id": "S139",
+                    "path": "docs/user/advanced.rst",
+                    "line": 78
+                  },
+                  {
+                    "id": "S161",
+                    "path": "docs/user/quickstart.rst",
+                    "line": 78
+                  },
+                  {
+                    "id": "S186",
+                    "path": "src/requests/adapters.py",
+                    "line": 584
+                  }
+                ],
+                "10": [
+                  {
+                    "id": "S154",
+                    "path": "docs/user/advanced.rst",
+                    "line": 1072
+                  },
+                  {
+                    "id": "S140",
+                    "path": "docs/user/advanced.rst",
+                    "line": 128
+                  },
+                  {
+                    "id": "S139",
+                    "path": "docs/user/advanced.rst",
+                    "line": 78
+                  },
+                  {
+                    "id": "S161",
+                    "path": "docs/user/quickstart.rst",
+                    "line": 78
+                  },
+                  {
+                    "id": "S186",
+                    "path": "src/requests/adapters.py",
+                    "line": 584
+                  },
+                  {
+                    "id": "S183",
+                    "path": "src/requests/adapters.py",
+                    "line": 413
+                  },
+                  {
+                    "id": "S265",
+                    "path": "src/requests/utils.py",
+                    "line": 922
+                  },
+                  {
+                    "id": "S256",
+                    "path": "src/requests/utils.py",
+                    "line": 233
+                  },
+                  {
+                    "id": "S167",
+                    "path": "docs/user/quickstart.rst",
+                    "line": 492
+                  },
+                  {
+                    "id": "S151",
+                    "path": "docs/user/advanced.rst",
+                    "line": 880
+                  }
+                ]
+              },
+              "recall": {
+                "1": 0.0,
+                "3": 0.0,
+                "5": 0.5,
+                "10": 0.5
+              }
+            },
+            {
+              "id": "requests-session",
+              "query": "How do Session objects persist cookies and reuse connections?",
+              "relevant_files": [
+                "docs/user/advanced.rst",
+                "src/requests/sessions.py"
+              ],
+              "retrieved": {
+                "1": [
+                  {
+                    "id": "S138",
+                    "path": "docs/user/advanced.rst",
+                    "line": 1
+                  }
+                ],
+                "3": [
+                  {
+                    "id": "S138",
+                    "path": "docs/user/advanced.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S143",
+                    "path": "docs/user/advanced.rst",
+                    "line": 322
+                  },
+                  {
+                    "id": "S25",
+                    "path": "HISTORY.md",
+                    "line": 1329
+                  }
+                ],
+                "5": [
+                  {
+                    "id": "S138",
+                    "path": "docs/user/advanced.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S143",
+                    "path": "docs/user/advanced.rst",
+                    "line": 322
+                  },
+                  {
+                    "id": "S25",
+                    "path": "HISTORY.md",
+                    "line": 1329
+                  },
+                  {
+                    "id": "S26",
+                    "path": "HISTORY.md",
+                    "line": 1392
+                  },
+                  {
+                    "id": "S139",
+                    "path": "docs/user/advanced.rst",
+                    "line": 78
+                  }
+                ],
+                "10": [
+                  {
+                    "id": "S138",
+                    "path": "docs/user/advanced.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S143",
+                    "path": "docs/user/advanced.rst",
+                    "line": 322
+                  },
+                  {
+                    "id": "S25",
+                    "path": "HISTORY.md",
+                    "line": 1329
+                  },
+                  {
+                    "id": "S26",
+                    "path": "HISTORY.md",
+                    "line": 1392
+                  },
+                  {
+                    "id": "S139",
+                    "path": "docs/user/advanced.rst",
+                    "line": 78
+                  },
+                  {
+                    "id": "S234",
+                    "path": "src/requests/sessions.py",
+                    "line": 1
+                  },
+                  {
+                    "id": "S61",
+                    "path": "docs/api.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S140",
+                    "path": "docs/user/advanced.rst",
+                    "line": 128
+                  },
+                  {
+                    "id": "S27",
+                    "path": "HISTORY.md",
+                    "line": 1449
+                  },
+                  {
+                    "id": "S152",
+                    "path": "docs/user/advanced.rst",
+                    "line": 956
+                  }
+                ]
+              },
+              "recall": {
+                "1": 0.5,
+                "3": 0.5,
+                "5": 0.5,
+                "10": 1.0
+              }
+            },
+            {
+              "id": "requests-auth",
+              "query": "How do HTTPBasicAuth and HTTPDigestAuth authenticate a request?",
+              "relevant_files": [
+                "src/requests/auth.py",
+                "docs/user/authentication.rst"
+              ],
+              "retrieved": {
+                "1": [
+                  {
+                    "id": "S84",
+                    "path": "tests/test_lowlevel.py",
+                    "line": 202
+                  }
+                ],
+                "3": [
+                  {
+                    "id": "S84",
+                    "path": "tests/test_lowlevel.py",
+                    "line": 202
+                  },
+                  {
+                    "id": "S156",
+                    "path": "docs/user/authentication.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S145",
+                    "path": "docs/user/advanced.rst",
+                    "line": 461
+                  }
+                ],
+                "5": [
+                  {
+                    "id": "S84",
+                    "path": "tests/test_lowlevel.py",
+                    "line": 202
+                  },
+                  {
+                    "id": "S156",
+                    "path": "docs/user/authentication.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S145",
+                    "path": "docs/user/advanced.rst",
+                    "line": 461
+                  },
+                  {
+                    "id": "S150",
+                    "path": "docs/user/advanced.rst",
+                    "line": 800
+                  },
+                  {
+                    "id": "S83",
+                    "path": "tests/test_lowlevel.py",
+                    "line": 144
+                  }
+                ],
+                "10": [
+                  {
+                    "id": "S84",
+                    "path": "tests/test_lowlevel.py",
+                    "line": 202
+                  },
+                  {
+                    "id": "S156",
+                    "path": "docs/user/authentication.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S145",
+                    "path": "docs/user/advanced.rst",
+                    "line": 461
+                  },
+                  {
+                    "id": "S150",
+                    "path": "docs/user/advanced.rst",
+                    "line": 800
+                  },
+                  {
+                    "id": "S83",
+                    "path": "tests/test_lowlevel.py",
+                    "line": 144
+                  },
+                  {
+                    "id": "S193",
+                    "path": "src/requests/auth.py",
+                    "line": 79
+                  },
+                  {
+                    "id": "S196",
+                    "path": "src/requests/auth.py",
+                    "line": 290
+                  },
+                  {
+                    "id": "S61",
+                    "path": "docs/api.rst",
+                    "line": 1
+                  },
+                  {
+                    "id": "S82",
+                    "path": "tests/test_lowlevel.py",
+                    "line": 76
+                  },
+                  {
+                    "id": "S10",
+                    "path": "HISTORY.md",
+                    "line": 201
+                  }
+                ]
+              },
+              "recall": {
+                "1": 0.0,
+                "3": 0.5,
+                "5": 0.5,
+                "10": 1.0
+              }
+            }
+          ],
+          "recall": {
+            "1": 0.25,
+            "3": 0.375,
+            "5": 0.5,
+            "10": 0.75
+          },
+          "latency_ms": {
+            "k": 5,
+            "p50": 3.0956500000058895,
+            "p95": 4.67929999996386,
+            "samples": 20
+          },
+          "generation": null,
+          "faithfulness": null,
+          "status": "not_run_offline_mode"
+        }
+      }
+    }
+  ]
+}

@@ -1,13 +1,3 @@
-langchain
-langchain-google-genai
-langchain_community
-dotenv
-langchain_core
-GitPython
-chromadb
-langchainhub
-langchain-text-splitters
-langchain-huggingface
-langchain-chroma
-sentence-transformers
-streamlit
+fastapi>=0.115,<1
+uvicorn>=0.34,<1
+python-dotenv>=1,<2

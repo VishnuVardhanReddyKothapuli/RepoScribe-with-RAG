@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "sampling": {"seed": 42, "method": "random.sample of a small public candidate pool; not a representative benchmark", "pool": ["pallets/click", "psf/requests", "sindresorhus/is", "pallets/itsdangerous"]},
+  "relevance": "Manually labeled relevant files. Recall@K uses unique file paths among the top K chunks. Labels are a small, non-exhaustive smoke benchmark, not tuned to ranking results.",
+  "repositories": [
+    {"snapshot": "pallets_click.json", "cases": [
+      {"id": "click-purpose", "query": "What is Click and how does it create command line interfaces?", "relevant_files": ["README.md", "docs/why.md"]},
+      {"id": "click-testing", "query": "How do I test a command with CliRunner and invoke?", "relevant_files": ["docs/testing.md", "src/click/testing.py"]},
+      {"id": "click-options", "query": "How do option decorators define command parameters?", "relevant_files": ["docs/options.md", "src/click/decorators.py"]},
+      {"id": "click-license", "query": "What license and redistribution conditions apply?", "relevant_files": ["LICENSE.txt"]}
+    ]},
+    {"snapshot": "pallets_itsdangerous.json", "cases": [
+      {"id": "itsdangerous-purpose", "query": "How does ItsDangerous sign data to detect tampering?", "relevant_files": ["README.md", "docs/concepts.rst"]},
+      {"id": "itsdangerous-expiry", "query": "How does TimestampSigner reject signatures older than max_age?", "relevant_files": ["src/itsdangerous/timed.py", "docs/timed.rst"]},
+      {"id": "itsdangerous-url", "query": "How do URLSafeSerializer and URLSafeTimedSerializer encode URL safe data?", "relevant_files": ["src/itsdangerous/url_safe.py", "docs/url_safe.rst"]},
+      {"id": "itsdangerous-license", "query": "What license and redistribution conditions apply?", "relevant_files": ["LICENSE.txt"]}
+    ]},
+    {"snapshot": "psf_requests.json", "cases": [
+      {"id": "requests-install", "query": "How do I install requests with pip?", "relevant_files": ["README.md", "docs/user/install.rst"]},
+      {"id": "requests-timeout", "query": "How do I specify a timeout for a requests get call?", "relevant_files": ["docs/user/quickstart.rst", "src/requests/api.py"]},
+      {"id": "requests-session", "query": "How do Session objects persist cookies and reuse connections?", "relevant_files": ["docs/user/advanced.rst", "src/requests/sessions.py"]},
+      {"id": "requests-auth", "query": "How do HTTPBasicAuth and HTTPDigestAuth authenticate a request?", "relevant_files": ["src/requests/auth.py", "docs/user/authentication.rst"]}
+    ]}
+  ]
+}
