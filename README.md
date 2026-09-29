@@ -1,4 +1,5 @@
-# RepoScribe
+# RepoScribe 
+https://reposcribe-28hh.onrender.com/
 
 Generate a README from a public GitHub repository with a simple React + TypeScript interface, a local FastAPI backend, and source-cited retrieval. The interface uses warm white, charcoal, and forest green.
 
