@@ -13,17 +13,7 @@ function App() {
   const [error, setError] = useState('');
   const [result, setResult] = useState<Result | null>(null);
   const [raw, setRaw] = useState(false);
-  const [health, setHealth] = useState('Connecting to local API…');
-  const [ready, setReady] = useState(false);
 
-  useEffect(() => {
-    fetch('/api/health').then(async response => {
-      if (!response.ok) throw new Error();
-      const data = await response.json();
-      setReady(data.ready);
-      setHealth(data.ready ? `Ready · ${data.model}` : 'Setup needed · add GOOGLE_API_KEY to the server .env file');
-    }).catch(() => setHealth('API offline · start the Python server on port 8000'));
-  }, []);
 
   async function submit(event: FormEvent) {
     event.preventDefault();

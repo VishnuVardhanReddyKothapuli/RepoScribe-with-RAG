@@ -1,3 +1,7 @@
 fastapi>=0.115,<1
 uvicorn>=0.34,<1
 python-dotenv>=1,<2
+pydantic-settings>=2,<3
+langchain>=0.3.0,<0.4.0
+langgraph>=0.2.0,<0.3.0
+langchain-google-genai>=2.0.0,<3.0.0

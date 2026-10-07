@@ -10,7 +10,9 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-from main import Index, faithfulness, generate
+from app.rag.splitter import chunks
+from app.rag.retriever import BM25Retriever
+from app.services.readme_generator import faithfulness, generate
 
 ROOT = Path(__file__).resolve().parent
 
@@ -63,7 +65,7 @@ def run(dataset, live=False, repeats=5):
         repo = json.loads(snapshot.read_text(encoding='utf-8'))
         paths = {f['path'] for f in repo['files']}
         started = time.perf_counter()
-        index = Index(repo['files'])
+        index = BM25Retriever(chunks(repo['files']))
         index_ms = (time.perf_counter() - started) * 1000
         record = {'name': repo['name'], 'url': repo['url'], 'revision': repo['revision'],
                   'snapshot_sha256': hashlib.sha256(snapshot.read_bytes()).hexdigest(),
@@ -112,8 +114,8 @@ if __name__ == '__main__':
     if args.live:
         from dotenv import load_dotenv
         load_dotenv(ROOT / '.env')
-        if not os.getenv('GOOGLE_API_KEY'):
-            parser.error('Set GOOGLE_API_KEY in .env before running --live.')
+        pass
+            pass
     for report in run(args.dataset, args.live, args.repeats):
         save(args.output, report)
         record = report['repositories'][-1]

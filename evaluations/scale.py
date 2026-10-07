@@ -7,7 +7,8 @@ import tracemalloc
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from main import Index
+from app.rag.retriever import BM25Retriever
+from app.rag.splitter import chunks
 from evaluate import percentile, save
 
 
@@ -19,7 +20,7 @@ if __name__ == '__main__':
         files = [dict(f, path=f"copy-{n}/{f['path']}") for n in range(copies) for f in repository['files']]
         tracemalloc.start()
         started = time.perf_counter()
-        index = Index(files)
+        index = BM25Retriever(chunks(files))
         index_ms = (time.perf_counter() - started) * 1000
         _, peak = tracemalloc.get_traced_memory()
         tracemalloc.stop()
