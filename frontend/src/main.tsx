@@ -42,15 +42,11 @@ function App() {
         <aside><form onSubmit={submit}>
           <div className="section-label"><span>01</span><h2>Choose a repository</h2></div>
           <label htmlFor="repository">Public GitHub URL</label>
-          <input id="repository" type="url" required maxLength={200} placeholder="https://github.com/owner/repository" value={url} onChange={e => setUrl(e.target.value)} disabled={busy} aria-describedby="repo-hint"/>
-          <p id="repo-hint" className="hint">Public repositories only. Repository code is never executed.</p>
+          <input id="repository" type="url" required maxLength={200} placeholder="https://github.com/owner/repository" value={url} onChange={e => setUrl(e.target.value)} disabled={busy}/>
           <label className="checkbox"><input type="checkbox" checked={rerank} onChange={e => setRerank(e.target.checked)} disabled={busy}/>Try experimental reranking</label>
-          <p className="hint">Reorders retrieval candidates by query coverage. Off by default while we measure its impact.</p>
-          <button className="primary" disabled={busy || !url.trim() || !ready}>{busy ? 'Generating README…' : 'Generate README →'}</button>
-          <p className="connection" role="status">{health}</p>
+          <button className="primary" disabled={busy || !url.trim()}>{busy ? 'Generating README…' : 'Generate README →'}</button>
           {error && <p className="error" role="alert">{error}</p>}
         </form>
-        <div className="notes"><h3>Built from evidence</h3><p>Each generated claim should cite a source. Open the evidence panel to check it against the repository.</p><p>Missing details are omitted. Always review commands and setup instructions before publishing.</p></div>
         </aside>
         <section className="document" aria-busy={busy} aria-label="README output">
           <div className="document-bar"><div className="section-label"><span>02</span><h2>README.md</h2></div>{result && <button onClick={download}>Download ↓</button>}</div>
