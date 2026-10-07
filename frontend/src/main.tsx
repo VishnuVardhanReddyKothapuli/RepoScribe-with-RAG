@@ -33,8 +33,14 @@ function App() {
     setError(''); setResult(null); setBusy(true); setChatHistory([]);
     try {
       const response = await fetch('/api/generate', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ repo_url: url.trim(), rerank }) });
-      const data = await response.json();
-      if (!response.ok) throw new Error(typeof data.detail === 'string' ? data.detail : 'The request could not be processed. Check the repository URL.');
+      const text = await response.text();
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (e) {
+        throw new Error(`Server returned non-JSON response (${response.status}). Are you missing an environment variable?`);
+      }
+      if (!response.ok) throw new Error(typeof data?.detail === 'string' ? data.detail : 'The request could not be processed. Check the repository URL.');
       setResult(data); setRaw(false);
     } catch (err) { setError(err instanceof Error ? err.message : 'Generation failed. Please retry.'); }
     finally { setBusy(false); }
@@ -62,8 +68,14 @@ function App() {
           conversation: chatHistory 
         }) 
       });
-      const data = await response.json();
-      if (!response.ok) throw new Error(typeof data.detail === 'string' ? data.detail : 'Chat request failed.');
+      const text = await response.text();
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (e) {
+        throw new Error(`Server returned non-JSON response (${response.status}).`);
+      }
+      if (!response.ok) throw new Error(typeof data?.detail === 'string' ? data.detail : 'Chat request failed.');
       
       let answerText = data.answer;
       if (data.citations && data.citations.length > 0) {

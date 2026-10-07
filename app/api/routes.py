@@ -16,7 +16,7 @@ def health():
 @router.post('/generate', response_model=RetrievalResult)
 def create_readme(request: GenerateRequest):
     if not settings.gemini_api_key:
-        raise HTTPException(503, 'Set GEMINI_API_KEY in the server .env file and restart the API.')
+        raise HTTPException(400, 'Set GEMINI_API_KEY in the server .env file and restart the API.')
         
     if not busy.acquire(blocking=False):
         raise HTTPException(429, 'A README is already being generated. Please try again shortly.')
@@ -38,7 +38,7 @@ def create_readme(request: GenerateRequest):
 @router.post('/chat', response_model=RepoChatResponse)
 def handle_chat(request: RepoChatRequest):
     if not settings.gemini_api_key:
-        raise HTTPException(503, 'Set GEMINI_API_KEY in the server .env file and restart the API.')
+        raise HTTPException(400, 'Set GEMINI_API_KEY in the server .env file and restart the API.')
         
     try:
         result = chat_with_repo(request)
