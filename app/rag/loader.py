@@ -7,10 +7,10 @@ import zipfile
 from pathlib import PurePosixPath
 from app.config import settings
 
-MAX_ARCHIVE = 20_000_000
-MAX_BYTES = 4_000_000
-MAX_FILE = 100_000
-MAX_FILES = 1000
+MAX_ARCHIVE = settings.max_archive_bytes
+MAX_BYTES = settings.max_total_bytes
+MAX_FILE = settings.max_file_bytes
+MAX_FILES = settings.max_files
 SKIP = {'.git', 'node_modules', '.venv', 'venv', 'dist', 'build', '__pycache__', 'vendor'}
 EXTENSIONS = {'.py', '.js', '.ts', '.tsx', '.jsx', '.go', '.rs', '.java', '.rb', '.md', '.rst', '.txt', '.toml', '.json', '.yaml', '.yml', '.sh', '.cfg', '.ini'}
 SECRET = re.compile(r'AIza[\w-]{30,}|gh[pousr]_[A-Za-z0-9]{20,}|-----BEGIN [^-]*PRIVATE KEY-----[\s\S]*?-----END [^-]*PRIVATE KEY-----')

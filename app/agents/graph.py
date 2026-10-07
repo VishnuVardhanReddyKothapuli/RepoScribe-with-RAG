@@ -1,20 +1,20 @@
 import json
+import re
 from typing import TypedDict, List, Dict, Any, Annotated
 from langgraph.graph import StateGraph, END
 from langchain_core.prompts import ChatPromptTemplate
 from app.llm.model import get_llm
-import operator
+from app.models.schemas import RepositoryAnalysis, FeatureAnalysis, SetupAnalysis, QualityAnalysis
 
 class AgentState(TypedDict):
     repository_name: str
     top_level_entries: List[str]
     evidence: List[Dict[str, Any]]
     
-    # Outputs from parallel agents
-    repository_summary: str
-    features: str
-    setup: str
-    quality: str
+    repository_summary: RepositoryAnalysis
+    features: FeatureAnalysis
+    setup: SetupAnalysis
+    quality: QualityAnalysis
     
     draft_readme: str
     final_readme: str
@@ -23,7 +23,7 @@ def format_evidence(evidence: List[Dict[str, Any]]) -> str:
     return json.dumps(evidence)
 
 def repository_analyst(state: AgentState):
-    llm = get_llm()
+    llm = get_llm().with_structured_output(RepositoryAnalysis)
     prompt = ChatPromptTemplate.from_messages([
         ("system", "You are a Repository Analyst. Analyze the repository context to identify project purpose, architecture, main components, important technologies, and entry points. Use ONLY the provided evidence. Cite sources using [Snumber]."),
         ("user", "Repository: {repo_name}\nEvidence:\n{evidence}")
@@ -33,10 +33,10 @@ def repository_analyst(state: AgentState):
         "repo_name": state["repository_name"],
         "evidence": format_evidence(state["evidence"])
     })
-    return {"repository_summary": response.content}
+    return {"repository_summary": response}
 
 def feature_analyst(state: AgentState):
-    llm = get_llm()
+    llm = get_llm().with_structured_output(FeatureAnalysis)
     prompt = ChatPromptTemplate.from_messages([
         ("system", "You are a Feature Analyst. Analyze the repository context to identify major features, important workflows, user-facing functionality, and APIs if present. Use ONLY the provided evidence. Cite sources using [Snumber]."),
         ("user", "Repository: {repo_name}\nEvidence:\n{evidence}")
@@ -46,10 +46,10 @@ def feature_analyst(state: AgentState):
         "repo_name": state["repository_name"],
         "evidence": format_evidence(state["evidence"])
     })
-    return {"features": response.content}
+    return {"features": response}
 
 def setup_analyst(state: AgentState):
-    llm = get_llm()
+    llm = get_llm().with_structured_output(SetupAnalysis)
     prompt = ChatPromptTemplate.from_messages([
         ("system", "You are a Setup Analyst. Analyze the repository context to determine installation steps, environment variables, run commands, and deployment information. Use ONLY the provided evidence. Cite sources using [Snumber]."),
         ("user", "Repository: {repo_name}\nEvidence:\n{evidence}")
@@ -59,10 +59,10 @@ def setup_analyst(state: AgentState):
         "repo_name": state["repository_name"],
         "evidence": format_evidence(state["evidence"])
     })
-    return {"setup": response.content}
+    return {"setup": response}
 
 def quality_analyst(state: AgentState):
-    llm = get_llm()
+    llm = get_llm().with_structured_output(QualityAnalysis)
     prompt = ChatPromptTemplate.from_messages([
         ("system", "You are a Code Quality Analyst. Analyze the repository context to identify implementation details, testing strategy, limitations, and useful technical details. Use ONLY the provided evidence. Cite sources using [Snumber]."),
         ("user", "Repository: {repo_name}\nEvidence:\n{evidence}")
@@ -72,7 +72,7 @@ def quality_analyst(state: AgentState):
         "repo_name": state["repository_name"],
         "evidence": format_evidence(state["evidence"])
     })
-    return {"quality": response.content}
+    return {"quality": response}
 
 def coordinator(state: AgentState):
     llm = get_llm()
@@ -94,15 +94,14 @@ def coordinator(state: AgentState):
     response = chain.invoke({
         "repo_name": state["repository_name"],
         "entries": ", ".join(state["top_level_entries"]),
-        "summary": state["repository_summary"],
-        "features": state["features"],
-        "setup": state["setup"],
-        "quality": state["quality"]
+        "summary": state["repository_summary"].model_dump_json(),
+        "features": state["features"].model_dump_json(),
+        "setup": state["setup"].model_dump_json(),
+        "quality": state["quality"].model_dump_json()
     })
     return {"draft_readme": response.content}
 
 def validator(state: AgentState):
-    import re
     readme = state["draft_readme"]
     evidence = state["evidence"]
     known = {c['id'] for c in evidence}
@@ -126,10 +125,6 @@ def build_graph():
     workflow.add_node("quality_analyst", quality_analyst)
     workflow.add_node("coordinator", coordinator)
     workflow.add_node("validator", validator)
-    
-    workflow.set_entry_point("repository_analyst") # wait, parallel execution means we branch out
-    # Actually, we can add a fan-out node, or just set multiple entry points if langgraph supports it,
-    # or start with a node that does nothing, then parallel edges.
     
     workflow.add_node("start", lambda x: x)
     workflow.set_entry_point("start")

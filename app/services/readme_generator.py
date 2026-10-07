@@ -21,6 +21,10 @@ def generate(repo_url: str, rerank: bool = False):
     # 2. Chunking & Indexing
     document_chunks = chunks(repository['files'])
     retriever = BM25Retriever(document_chunks)
+    
+    from app.services.repo_chat import _repo_cache
+    _repo_cache[repo_url] = retriever
+    
     indexed = time.perf_counter()
     
     # 3. Context Retrieval
@@ -36,13 +40,7 @@ def generate(repo_url: str, rerank: bool = False):
     initial_state = {
         "repository_name": repository['name'],
         "top_level_entries": top_level_entries,
-        "evidence": evidence,
-        "repository_summary": "",
-        "features": "",
-        "setup": "",
-        "quality": "",
-        "draft_readme": "",
-        "final_readme": ""
+        "evidence": evidence
     }
     
     final_state = graph.invoke(initial_state)
